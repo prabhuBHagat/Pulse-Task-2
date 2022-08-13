@@ -1,0 +1,271 @@
+body {
+  font-family: "Ubuntu";
+}
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+  border-collapse: collapse;
+}
+
+.main_container {
+  display: flex;
+  padding: 40px 40px 20px 40px;
+}
+.main_container-image {
+  width: 40%;
+  margin: 95px 0 0 33px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.main_container-banner-image img {
+  transition: all 0.3s ease-in-out;
+}
+.main_container-banner-image img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+.main_container-corner-top-image:hover {
+  transform: matrix(1, 0, 0, 1, 9.68072, 4.04239);
+}
+.main_container-corner-bottom-image:hover {
+  transform: matrix(1, 0, 0, 1, 9.68072, 4.04239);
+}
+.main_container-btn-link {
+  position: absolute;
+  top: 43%;
+  left: 40%;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  text-align: center;
+  padding-top: 16px;
+  border-radius: 50%;
+  color: #00c194;
+  transition: all 0.3s ease-in-out;
+}
+.main_container-btn-link-icon {
+  font-size: 20px;
+}
+.main_container-btn-link:hover {
+  color: #fff;
+  background: #00c194;
+}
+@-webkit-keyframes main_container-play-button {
+  0% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+@keyframes main_container-play-button {
+  0% {
+    transform: scale(2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+.main_container-banner-image {
+  z-index: 1;
+  height: 80%;
+}
+.main_container-corner-image {
+  position: relative;
+}
+.main_container-banner-image::before {
+  content: " ";
+  height: 100%;
+  width: 75%;
+  -webkit-clip-path: polygon(0 0, 70% 0%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 70% 0%, 100% 100%, 0% 100%);
+  background: #00c194;
+  position: absolute;
+  z-index: -1;
+  bottom: 47px;
+  left: -38px;
+}
+.main_container-corner-top-image {
+  position: absolute;
+  z-index: 2;
+  top: -84px;
+  left: -99px;
+}
+.main_container-corner-bottom-image {
+  position: absolute;
+  bottom: -367px;
+  z-index: 3;
+  left: -27px;
+}
+.main_container-content {
+  width: 50%;
+}
+.main_container-inner-content {
+  padding: 108px 20px 10px 50px;
+}
+.main_container-subtitle {
+  font-size: 16px;
+  color: #00c194;
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: block;
+  padding-bottom: 10px;
+}
+.main_container-subtitle::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background-color: #00c194;
+  margin: 0 7px 0 0;
+  border-radius: 50%;
+  display: inline-block;
+  transform: translateY(-50%);
+}
+.main_container-title {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 42px;
+  padding: 0px 0px 15px 0px;
+}
+.main_container-description {
+  color: #70778a;
+  font-size: 16px;
+  line-height: 30px;
+}
+.main_container-list {
+  color: #212121;
+  font-size: 16px;
+}
+.main_container-item {
+  line-height: 30px;
+  padding: 10px 0px 50px 0px;
+}
+.main_container .fa-check {
+  color: #00c194;
+  margin: 0 5px 0 0;
+  padding: 0px 12px 0px 0px;
+  font-size: 16px;
+  font-weight: 900;
+}
+.main_container-btn {
+  background-color: #eaf7f4;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  color: #00c194;
+  padding: 14px 30px 14px 30px;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+.main_container-btn:hover {
+  background-color: #00c194;
+  color: #fff;
+}
+
+@media screen and (max-width: 1200px) {
+  .main_container-corner-top-image1 {
+    display: none;
+  }
+  .main_container-corner-bottom-image2 {
+    display: none;
+  }
+  .main_container-banner-image::before {
+    display: none;
+  }
+  .main_container-title {
+    font-size: 26px;
+    line-height: 35px;
+    padding: 0px 0px 10px 0px;
+  }
+  .main_container-inner-content {
+    padding: 108px 29px 10px 50px;
+  }
+  .main_container-subtitle {
+    font-size: 14px;
+    color: #00c194;
+    font-weight: 500;
+    letter-spacing: 1px;
+    display: block;
+    padding-bottom: 5px;
+  }
+  .main_container-description {
+    color: #70778a;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .main_container-item {
+    line-height: 30px;
+    padding: 7px 0px 50px 0px;
+  }
+  .main_container-image {
+    width: 50%;
+    margin: 95px 0 0 33px;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+}
+@media screen and (max-width: 992px) {
+  .main_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .main_container-btn-link {
+    top: 43%;
+    left: 46%;
+  }
+  .main_container-image {
+    width: 100%;
+  }
+  .main_container-inner-content {
+    padding: 35px 29px 10px 50px;
+  }
+  .main_container-banner-image {
+    text-align: center;
+  }
+  .main_container-content {
+    width: 100%;
+  }
+  .main_container-btn-link {
+    top: 43%;
+    left: 40%;
+    width: 40px;
+    height: 40px;
+    padding-top: 11px;
+  }
+}/*# sourceMappingURL=main.css.map */
